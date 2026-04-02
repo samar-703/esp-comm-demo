@@ -25,6 +25,13 @@ const config: Config = {
       borderRadius: {
         "2xl": "1.25rem"
       },
+      borderWidth: {
+        DEFAULT: "3px",
+        "0": "0",
+        "2": "2px",
+        "4": "4px",
+        "8": "8px",
+      },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"]

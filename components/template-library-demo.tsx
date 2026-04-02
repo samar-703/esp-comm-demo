@@ -59,7 +59,7 @@ export function TemplateLibraryDemo() {
         />
 
         <div className="panel rounded-[1.5rem] border p-5">
-          <div className="grid gap-4 lg:grid-cols-[1fr_auto_auto]">
+          <div className="grid gap-4 items-center lg:grid-cols-[1fr_auto_auto]">
             <div className="flex flex-wrap gap-2">
               {templateFilters.map((filter) => (
                 <button

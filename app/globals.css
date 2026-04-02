@@ -74,7 +74,7 @@ textarea {
 }
 
 .panel {
-  border: 1px solid rgba(203, 213, 225, 0.95);
+  border: 3px solid rgba(148, 163, 184, 0.95);
   background: var(--panel);
   backdrop-filter: blur(10px);
   box-shadow:

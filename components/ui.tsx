@@ -12,17 +12,17 @@ type BadgeTone = NonNullable<BadgeProps["tone"]>;
 
 export function Badge({ children, tone = "neutral", className }: BadgeProps) {
   const toneClasses = {
-    neutral: "border-slate-200 bg-white/80 text-slate-700",
-    accent: "border-teal-200 bg-teal-50 text-teal-800",
-    warning: "border-amber-200 bg-amber-50 text-amber-800",
-    danger: "border-rose-200 bg-rose-50 text-rose-800",
-    info: "border-blue-200 bg-blue-50 text-blue-800"
+    neutral: "border-slate-300 bg-white/80 text-slate-700",
+    accent: "border-slate-900 bg-slate-900 text-white",
+    warning: "border-amber-300 bg-amber-50 text-amber-800",
+    danger: "border-rose-300 bg-rose-50 text-rose-800",
+    info: "border-blue-300 bg-blue-50 text-blue-800"
   } satisfies Record<BadgeTone, string>;
 
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold tracking-[0.16em] uppercase",
+        "inline-flex items-center rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase shadow-sm",
         toneClasses[tone],
         className
       )}
@@ -90,13 +90,17 @@ type SectionHeadingProps = {
 
 export function SectionHeading({ eyebrow, title, description, action }: SectionHeadingProps) {
   return (
-    <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+    <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
       <div className="max-w-3xl">
-        {eyebrow ? <div className="text-xs font-semibold uppercase tracking-[0.22em] text-teal-700">{eyebrow}</div> : null}
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">{title}</h1>
+        {eyebrow ? <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-teal-700">{eyebrow}</div> : null}
+        <h1 className="text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">{title}</h1>
         <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">{description}</p>
       </div>
-      {action}
+      {action && (
+        <div className="shrink-0 lg:text-right">
+          {action}
+        </div>
+      )}
     </div>
   );
 }
